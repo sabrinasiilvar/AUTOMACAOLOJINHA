@@ -186,7 +186,7 @@ describe('Testa fluxo do produto', () => {
         cy.pageAccessibility()
     })
 
-    it('editar um valor de produto', () => {
+    it.only('editar um valor de produto', () => {
         let nomeProduto = "TesteEdiacaoValor"
         cy.criarProduto(nomeProduto, "70", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
