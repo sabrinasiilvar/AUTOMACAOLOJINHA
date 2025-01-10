@@ -69,7 +69,6 @@ describe('Testa fluxo do produto', () => {
         cy.criarProduto("😊", "10", " ")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
-        cy.screenshot()
     })
 
     it('criar um produto com acentuação', () => {
@@ -100,7 +99,6 @@ describe('Testa fluxo do produto', () => {
         cy.criarProduto("cores", "10", " ")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
-        cy.screenshot()
     })
 
     it('criar um produto com valor > R$7000,01', () => {
