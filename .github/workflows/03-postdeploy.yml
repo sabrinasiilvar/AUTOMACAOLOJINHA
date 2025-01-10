@@ -5,7 +5,7 @@ on:
   workflow_run:
     workflows: ["Execução manual"] #Seria o nome do job do deploy
     types: 
-      - completed 
+      - completed
     
 
 jobs:
