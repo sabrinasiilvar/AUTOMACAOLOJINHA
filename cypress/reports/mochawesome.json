@@ -1,0 +1,240 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-08T16:26:26.910Z",
+    "end": "2025-01-08T16:26:46.647Z",
+    "duration": 19737,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7e381359-9948-498b-8138-b196184f543f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\gui\\testesE2E.cy.js",
+      "file": "cypress\\e2e\\gui\\testesE2E.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fe565ae7-7c9d-4326-8749-43efac627cbb",
+          "title": "Testa componentes da página de login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "executa comando pra verificar componentes",
+              "fullTitle": "Testa componentes da página de login executa comando pra verificar componentes",
+              "timedOut": null,
+              "duration": 2169,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.verificacaoDeCoresLogin();\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "6c013a0d-b21f-4b5d-bde4-fc33f43c639e",
+              "parentUUID": "fe565ae7-7c9d-4326-8749-43efac627cbb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6c013a0d-b21f-4b5d-bde4-fc33f43c639e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2169,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+          "title": "Testes página de login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com credenciais inválidas",
+              "fullTitle": "Testes página de login Login com credenciais inválidas",
+              "timedOut": null,
+              "duration": 1934,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(faker.person.firstName(), faker.internet.password());\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/?error=Falha%20ao%20fazer%20o%20login');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "3b8a3fe9-cfa6-4a6b-94b0-32d83b7b9faa",
+              "parentUUID": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login com campos em branco",
+              "fullTitle": "Testes página de login login com campos em branco",
+              "timedOut": null,
+              "duration": 1563,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(' ', ' ');\ncy.get(\".toast\").contains(\"Falha ao fazer o login\").should('be.visible');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "f34e2a71-da24-41ce-b615-d64fc3e8ccd6",
+              "parentUUID": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login com credenciais corretas",
+              "fullTitle": "Testes página de login login com credenciais corretas",
+              "timedOut": null,
+              "duration": 5510,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(usuario, senha);\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "df82aa63-7d7d-4f02-a038-3aaaa8217aaf",
+              "parentUUID": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login com usuário incorreto e senha correta",
+              "fullTitle": "Testes página de login login com usuário incorreto e senha correta",
+              "timedOut": null,
+              "duration": 1733,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(faker.person.firstName(), senha);\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "ffbf2fb9-b40e-4d9e-9f6b-e89735679096",
+              "parentUUID": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login com senha incorreta e usuário correto",
+              "fullTitle": "Testes página de login login com senha incorreta e usuário correto",
+              "timedOut": null,
+              "duration": 1835,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(usuario, faker.internet.password());\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "a239bf3b-6aa9-4c30-a84c-3471d16f70d9",
+              "parentUUID": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Acessar uma rota sem estar logado",
+              "fullTitle": "Testes página de login Acessar uma rota sem estar logado",
+              "timedOut": null,
+              "duration": 1090,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\testesE2E.cy.js\\\\Acessar uma rota sem estar logado -- after all hook.png\"\n    ]\n  ]\n}",
+              "code": "cy.visit('http://165.227.93.41/lojinha-web/v2/produto');\ncy.url().should('eq', 'http://165.227.93.41/lojinha-web/v2/?error=Acesse%20a%20lojinha');\ncy.pageAccessibility();",
+              "err": {},
+              "uuid": "7a575361-d10f-47ad-92be-2e5dbbf218ce",
+              "parentUUID": "71f8bb41-cc9e-4ced-b7c2-73528f26c61d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3b8a3fe9-cfa6-4a6b-94b0-32d83b7b9faa",
+            "f34e2a71-da24-41ce-b615-d64fc3e8ccd6",
+            "df82aa63-7d7d-4f02-a038-3aaaa8217aaf",
+            "ffbf2fb9-b40e-4d9e-9f6b-e89735679096",
+            "a239bf3b-6aa9-4c30-a84c-3471d16f70d9",
+            "7a575361-d10f-47ad-92be-2e5dbbf218ce"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13665,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
