@@ -3,7 +3,7 @@ name: "Execução agendado"
 #gatilho de execução manual = workflow_dispatch
 on:
   schedule: 
-    - cron: "45 8 * * *"
+    - cron: "0 9 * * *"
 
 jobs:
   e2e-tests:
