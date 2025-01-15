@@ -1358,3 +1358,18 @@ describe('Testes relacionado ao componente da API', () => {
     });
 
 });
+
+it(`Remover um componente do produto ${produtoIdExistente}/${componenteIdExistente} com URl inválida`, () => {
+    cy.api({
+        method: "DELETE",
+        url: `${url}/produtos/${produtoIdExistente}/componentes/${componenteIdExistente}`,
+        headers: {
+            token: valorToken
+        },
+        failOnStatusCode: false
+    }).then((response) => {
+        expect(response.status).to.eq(404);
+    })
+});
+
+
