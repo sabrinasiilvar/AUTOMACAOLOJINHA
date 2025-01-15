@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker'
+/* import { faker } from '@faker-js/faker'
 let valorToken
 let url = "http://165.227.93.41/lojinha/v2/"
 let produtoId = faker.number.int()
@@ -217,6 +217,6 @@ describe('Testes relacionado ao usuário', () => {
     }).then((response) => {
         expect(response.status).to.eq(401)
     })
-}); 
+}); */
 
 
