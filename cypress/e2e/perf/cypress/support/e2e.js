@@ -15,16 +15,3 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import './pages/login/login-commands'
-import './pages/novoProduto/novoProduto-commands'
-import './pages/editaProduto/editaProduto.commands'
-import './pages/listaProduto/listaProduto-commands'
-import './pages/componentes/componentes-commands'
-import 'cypress-axe'
-import './accessibility-commands'
-import 'cypress-mochawesome-reporter/register'
-import 'cypress-plugin-api'
-import './pages/usuario/usuario-commands.cy'
-
- 
- 
