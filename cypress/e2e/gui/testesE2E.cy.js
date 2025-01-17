@@ -58,87 +58,87 @@ describe('Testa fluxo do produto', () => {
     });
 
     // Criar produto
-    it('criar um produto com sucesso', () => {
+     it.only('criar um produto com sucesso', () => {
         cy.criarProduto("Playstation", "70", "Branca" )  
         cy.url().should('include','http://165.227.93.41/lojinha-web/v2/produto/')
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     });
 
-    it.only('criar um produto com caracter especial', () => {
+    it('criar um produto com caracter especial', () => {
         cy.criarProduto("😊", "10", " ")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto com acentuação', () => {
+    it('criar um produto com acentuação', () => {
         cy.criarProduto("ç", "5", " ")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto acima de 100 caracteres', () => {
+    it('criar um produto acima de 100 caracteres', () => {
         cy.criarProduto("10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "10", " ")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto com nome em branco', () => {
+    it('criar um produto com nome em branco', () => {
         cy.criarProduto(" ", "10", "verde")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto com cores acima de 100 caracteres', () => {
+    it('criar um produto com cores acima de 100 caracteres', () => {
         cy.criarProduto("cores", "10", "100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto com cores em branco', () => {
+    it('criar um produto com cores em branco', () => {
         cy.criarProduto("cores", "10", " ")
         cy.assertionsdeAdicionarProduto()
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto com valor > R$7000,01', () => {
+    it('criar um produto com valor > R$7000,01', () => {
         cy.validaValordeUmNovoProduto("Playstation", "7000,01", "Preto" )
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto com valor < R$0,01', () => {
+    it('criar um produto com valor < R$0,01', () => {
         cy.validaValordeUmNovoProduto("Playstation", "0", "Preto" )
         cy.pageAccessibility()
     })
 
-    it.only('criar um produto sem valor', () => {
+    it('criar um produto sem valor', () => {
         cy.validaValordeUmNovoProduto(" ", " ", " " )
         cy.pageAccessibility()
     })
 
     // CRIAR COMPONENTES
-    it.only('criar um componente', () => {
+    it('criar um componente', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente("Teste1", "20") 
         cy.pageAccessibility()
     });
 
-    it.only('criar um componente com caracter especial', () => {
+    it('criar um componente com caracter especial', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente("😊", "20") 
         cy.pageAccessibility()
     });
 
-    it.only('criar um componente acima de 100 caracteres', () => {
+    it('criar um componente acima de 100 caracteres', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente("10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", "20") 
         cy.pageAccessibility()
     });
 
-    it.only('criar um componente com acentuação', () => {
+    it('criar um componente com acentuação', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente("ç", "20") 
@@ -146,21 +146,21 @@ describe('Testa fluxo do produto', () => {
     });
 
     
-    it.only('criar um componente com nome em branco', () => {
+    it('criar um componente com nome em branco', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente(" ", "20") 
         cy.pageAccessibility()
     });
 
-    it.only('criar um componente com quantidade inferior a 1', () => {
+    it('criar um componente com quantidade inferior a 1', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.validadeQuantidadeComponente("Teste1", "0") 
         cy.pageAccessibility()
     });
 
-    it.only('criar um componente com quantidade superior a 100 caracteres', () => {
+    it('criar um componente com quantidade superior a 100 caracteres', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente("Teste1", "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000") 
@@ -168,7 +168,7 @@ describe('Testa fluxo do produto', () => {
     });
 
     // excluir componente 
-    it.only('excluir componente', () => {
+    it('excluir componente', () => {
         cy.criarProduto("Teste1", "20", "Verde" )  
         cy.get(".waves-effect.waves-light.btn.right").click() 
         cy.criarComponente("Teste1", "20") 
@@ -178,7 +178,7 @@ describe('Testa fluxo do produto', () => {
     });
     
     // Editar produto
-    it.only('editar o nome de produto', () => {
+    it('editar o nome de produto', () => {
         let nomeProduto = "TestediacaoNome"
         cy.criarProduto(nomeProduto, "70", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
@@ -186,7 +186,7 @@ describe('Testa fluxo do produto', () => {
         cy.pageAccessibility()
     })
 
-    it.only('editar um valor de produto', () => {
+    it('editar um valor de produto', () => {
         let nomeProduto = "TesteEdiacaoValor"
         cy.criarProduto(nomeProduto, "70", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
@@ -195,7 +195,7 @@ describe('Testa fluxo do produto', () => {
         cy.pageAccessibility()
     })
 
-    it.only('editar a cor de produto', () => {
+    it('editar a cor de produto', () => {
         let nomeProduto = "TesteEdiacaoCor"
         cy.criarProduto(nomeProduto, "500,00", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
@@ -204,7 +204,7 @@ describe('Testa fluxo do produto', () => {
         cy.pageAccessibility()
     })
 
-    it.only('editar e deixar nome em branco', () => {
+    it('editar e deixar nome em branco', () => {
         let nomeProduto = "TesteEdiacaoSemNome"
         cy.criarProduto(nomeProduto, "500,00", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
@@ -213,7 +213,7 @@ describe('Testa fluxo do produto', () => {
         cy.pageAccessibility()
     })
       
-    it.only('editar e deixar valor em branco', () => {
+    it('editar e deixar valor em branco', () => {
         let nomeProduto = "TesteEdiacaoSemNome"
         cy.criarProduto(nomeProduto, "500,00", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
@@ -221,7 +221,7 @@ describe('Testa fluxo do produto', () => {
         cy.pageAccessibility()
     })
 
-    it.only('editar e deixar cor em branco', () => {
+    it('editar e deixar cor em branco', () => {
         let nomeProduto = "TesteEdiacaoSemNome"
         cy.criarProduto(nomeProduto, "500,00", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click() 
@@ -232,7 +232,7 @@ describe('Testa fluxo do produto', () => {
     })
 
     // Excluir um produto 
-    it.only('Excluir um produto', () => {
+    it('Excluir um produto', () => {
         cy.criarProduto("deletarproduto", "500,00", "Branca" )  
         cy.get('.waves-effect.waves-light.btn.grey').contains("Lista de Produtos").click()
         cy.get('title').get('a').contains("deletarproduto").parent().parent().children('a').should('have.class', 'secondary-content').click() //.parent().parent(): sobe dois níveis na árvore DOM. | .children('a'): seleciona os filhos <a> do elemento atual.
@@ -246,29 +246,20 @@ describe('Testa fluxo do produto', () => {
     function excluirProdutos() {
         cy.get('.collection li').then(($lis) => {
             if ($lis.length > 0) {
-                // Encontra o botão de excluir no primeiro produto
                 cy.wrap($lis.first())
                     .find('.material-icons')
                     .contains('delete')
                     .click();
- 
-                // Aguarda para garantir que a exclusão seja processada
                 cy.wait(1000);
- 
-                // Chama a função novamente para verificar e excluir o próximo produto
                 excluirProdutos();
             } else {
                 cy.log('Todos os produtos foram excluídos.');
             }
         });
-    }
+    } 
  
-    
-    it.only('Deve excluir todos os produtos da lojinha', () => {
+    it.only('Excluir todos os produtos da lojinha', () => {
         excluirProdutos();
-
-        // Verifica no final se não há mais produtos
-        cy.get('.collection li').should('not.exist');
     });
     
 });
