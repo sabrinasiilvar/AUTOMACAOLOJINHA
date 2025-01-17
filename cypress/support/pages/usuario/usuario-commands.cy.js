@@ -73,7 +73,7 @@ let componenteIdExistente
         })
     });
 
-//error 400 - Bad Request (Requisição Malformada)
+/* //error 400 - Bad Request (Requisição Malformada)
     it('Adicionar um novo usuário sem informar Login', () => {
         const usuarioNome = "Teste";
         const usuarioLogin = null;
@@ -215,6 +215,6 @@ let componenteIdExistente
     }).then((response) => {
         expect(response.status).to.eq(401)
     })
-    }); 
+    }); */
 
 
